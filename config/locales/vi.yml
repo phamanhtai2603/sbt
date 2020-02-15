@@ -1,8 +1,15 @@
 vi:
   home: "Trang chủ"
   name: "Tên"
+  time: "Thời gian: "
   role: "Chức năng"
   phone_number: "Điện thoại"
+  searchfor: "Tìm kiếm: "
+  start_day_from: "Tour từ"
+  start_day_to: "đến"
+  search: "Tìm kiếm"
+  form_day: "Khoảng thời gian từ: "
+  to_day: " đến "
   tour_manage: "QL tour"
   category_manage: "QL địa điểm"
   needlogin: "Cần đăng nhập"
@@ -70,6 +77,12 @@ vi:
   haveaccepted: "Không thể hủy vì tour đã được duyệt!"
   havecanceled: "Không thể thao tác vì tour này đã được hủy!"
   devise:
+    passwords:
+      account:
+        send_instructions: "Xác nhận tại đây!"
+    failure:
+      account:
+        invalid: "Tài khoản hoặc maật khẩu không đúng!"
     sessions:
       account:
         signed_out: "Đăng xuất thành công!"

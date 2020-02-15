@@ -12,7 +12,6 @@ class UserReviewsController < ApplicationController
     @review.account_id = current_account.id
     @review.status = 1
     if @review.save
-     #insert_data
       flash[:info] = t("addsuccess")
       redirect_to user_bookings_path
     else

@@ -16,9 +16,12 @@ class UserBookingsController < ApplicationController
         @booking = Booking.new(booking_params)
         @booking.account_id = current_account.id
         @booking.status = 0
-       @booking.total_price = @tour_price*@booking.amount
+        @booking.total_price = @tour_price*@booking.amount
+        @booking.start_day = @booking.tour.start_day
+        @booking.end_day = @booking.tour.end_day
         if @booking.save
           flash[:info] = t("addsuccessbook")
+          toastr.success('Nội dung thông báo', 'title')
           start_day = @booking.tour.start_day
           days_before_start = (start_day.to_i - Time.now.to_i)/ (24 * 3600)
           AutoUpdateBookingStatusJob.set(wait: days_before_start.days).perform_later(@booking.id) #tự động chuyển status nếu cách start_day 1 ngày mà vẫn uncheck

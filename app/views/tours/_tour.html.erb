@@ -5,7 +5,10 @@
       <img class="image-home" src="<%= image_home(tour) %>">
     </div>
     <span class="title">
-      <%= link_to tour.title, tour %>
+      <h3><%= link_to tour.title, tour %></h3>
+    </span>
+    <span>
+      <%= t("time")%> <%= tour.start_day.to_date %> <%= t("start_day_to")%> <%= tour.end_day.to_date %>
     </span>
     <span class="rate">
       <% if tour.avg_rate <= 1 %>
