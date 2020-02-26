@@ -9,9 +9,9 @@ class Account < ApplicationRecord
   # attr_accessor :remember_token, :activation_token, :reset_token
 
   has_many :tours, dependent: :destroy
-  has_many :orders, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :rattings, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
@@ -23,10 +23,7 @@ class Account < ApplicationRecord
     uniqueness: {case_sensitive: false}
   validates :phone_number, format: {with: VALID_PHONE_REGEX}, allow_blank: true
   # has_secure_password
-  validates :password, presence: true, length:
-    {minimum: Settings.password_min}, allow_nil: true
-  validates :password, presence: true, length:
-    {minimum: Settings.password_min}, on: :reset_password
+  validates :password, length:{minimum: Settings.password_min}
   enum role: {admin: 0, user: 1}
 
   # class << self
