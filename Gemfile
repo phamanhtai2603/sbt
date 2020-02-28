@@ -29,7 +29,6 @@ gem "delayed_job_active_record"
 gem "turbolinks"
 gem "uglifier"
 gem "rails-controller-testing"
-gem "rspec-rails"
 gem "faker", "1.7.3"
 gem "toastr-rails"
 gem "will_paginate"
@@ -48,7 +47,7 @@ end
 
 group :development do
   gem "listen", ">= 3.0.5", "< 3.2"
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 4.0.0.beta3'
   # gem "spring"
   # gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
@@ -60,6 +59,7 @@ group :test do
   gem "selenium-webdriver"
   gem 'shoulda-matchers', '~> 3.0', require: false
   gem 'database_cleaner', '~> 1.5'
+  gem 'factory_bot_rails'
 end
 
 group :production do

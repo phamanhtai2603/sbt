@@ -10,5 +10,6 @@ module HelloApp
 
     config.active_job.queue_adapter = :delayed_job
     config.exceptions_app = self.routes
+    config.factory_bot.definition_file_paths = ["custom/factories"]
   end
 end
